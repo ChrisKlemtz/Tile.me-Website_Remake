@@ -45,7 +45,7 @@ export default function Home({ onNavigate }) {
         <div className="absolute inset-0 bg-black/50 z-0"></div>
 
         {/* Fade to Black Overlay - starts at lower third */}
-        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-b from-transparent to-black z-5 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-linear-to-b from-transparent to-black z-5 pointer-events-none"></div>
 
         {/* Content */}
         <div className="relative z-10 max-w-3xl w-full px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center h-full">
@@ -53,9 +53,9 @@ export default function Home({ onNavigate }) {
             className="animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold leading-tight mb-6">
               <span className="text-white">Maßgeschneiderte </span>
-              <span className="bg-gradient-to-r from-[#6D5FFF] to-[#a78bfa] bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-[#6D5FFF] to-[#a78bfa] bg-clip-text text-transparent">
                 Online-Lösungen
               </span>
             </h1>
@@ -172,8 +172,8 @@ export default function Home({ onNavigate }) {
               }`}
             >
               {/* Decorative elements */}
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-r from-[#0F0937] to-[#6D5FFF] rounded-lg opacity-10 z-0"></div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-r from-[#6D5FFF] to-[#0F0937] rounded-lg opacity-10 z-0"></div>
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-linear-to-r from-[#0F0937] to-[#6D5FFF] rounded-lg opacity-10 z-0"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-linear-to-r from-[#6D5FFF] to-[#0F0937] rounded-lg opacity-10 z-0"></div>
 
               <div className="relative z-10">
                 {/* Image */}
@@ -187,7 +187,7 @@ export default function Home({ onNavigate }) {
 
                 {/* Name Badge - Above Image */}
                 <div className="flex justify-center -translate-y-1/2 relative z-20">
-                  <div className="bg-gradient-to-r from-[#0F0937] to-[#6D5FFF] text-white px-8 py-3 rounded-lg font-bold shadow-xl whitespace-nowrap">
+                  <div className="bg-linear-to-r from-[#0F0937] to-[#6D5FFF] text-white px-8 py-3 rounded-lg font-bold shadow-xl whitespace-nowrap">
                     Tile Gabloffsky
                   </div>
                 </div>
@@ -198,7 +198,7 @@ export default function Home({ onNavigate }) {
       </section>
 
       {/* DIVIDER */}
-      <div className="bg-gradient-to-r from-transparent via-[#0F0937] to-transparent h-px"></div>
+      <div className="bg-linear-to-r from-transparent via-[#0F0937] to-transparent h-px"></div>
 
       {/* SERVICES SECTION */}
       <section className="bg-white py-20 sm:py-28">
@@ -215,7 +215,7 @@ export default function Home({ onNavigate }) {
             <h2 className="text-4xl sm:text-5xl font-bold text-black text-center">
               Wie können wir helfen?
             </h2>
-            <div className="h-1 bg-gradient-to-r from-[#0F0937] to-[#6D5FFF] mt-2 rounded w-full sm:w-96 md:w-2xl mx-auto"></div>
+            <div className="h-1 bg-linear-to-r from-[#0F0937] to-[#6D5FFF] mt-2 rounded w-full sm:w-96 md:w-2xl mx-auto"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
@@ -249,7 +249,7 @@ export default function Home({ onNavigate }) {
                 style={{ transitionDelay: `${idx * 150}ms` }}
               >
                 <div className="p-8 rounded-lg border border-gray-200 hover:border-[#0F0937] hover:shadow-xl hover:shadow-[#0F0937]/10 transition-all duration-300 h-full transform hover:-translate-y-2">
-                  <div className="h-1 w-12 bg-gradient-to-r from-[#0F0937] to-[#6D5FFF] mb-6 rounded group-hover:w-full transition-all duration-500"></div>
+                  <div className="h-1 w-12 bg-linear-to-r from-[#0F0937] to-[#6D5FFF] mb-6 rounded group-hover:w-full transition-all duration-500"></div>
                   <h3 className="text-2xl font-bold mb-3 text-black group-hover:text-[#0F0937] transition-colors">
                     {service.title}
                   </h3>
@@ -266,7 +266,7 @@ export default function Home({ onNavigate }) {
       {/* CTA SECTION */}
       <section className="relative overflow-hidden" data-animate id="cta">
         <div
-          className={`absolute inset-0 bg-gradient-to-r from-[#0F0937] to-[#1a0d52] transition-all duration-1000 ${
+          className={`absolute inset-0 bg-linear-to-r from-[#0F0937] to-[#1a0d52] transition-all duration-1000 ${
             isVisible.cta ? "opacity-100" : "opacity-90"
           }`}
         ></div>

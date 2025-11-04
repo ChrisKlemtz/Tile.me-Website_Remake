@@ -52,11 +52,11 @@ npm --version
 
 ```bash
 # Von GitHub klonen:
-git clone <repository-url>
-cd web-agency
+git clone https://github.com/ChrisKlemtz/Tile.me-Website_Remake.git
+cd tile
 
 # Oder falls bereits lokal vorhanden:
-cd web-agency
+cd tile
 ```
 
 ### 2️⃣ Dependencies installieren

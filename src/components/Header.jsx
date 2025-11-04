@@ -13,7 +13,7 @@ export default function Header({ onNavigate }) {
   };
 
   return (
-    <header className="border-b border-gray-100 bg-[#0F0937] sticky top-0 z-50">
+    <header className="border-b border-gray-100 bg-linear-to-r bg-[#0F0937] to-[#000002] sticky top-0 z-50">
       <nav className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
         {/* Logo + Name SVG */}
         <button

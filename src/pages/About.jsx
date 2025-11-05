@@ -28,7 +28,7 @@ export default function About() {
   return (
     <div className="bg-white">
       {/* HERO SECTION */}
-      <section className="relative bg-linear-to-br from-gray-900 via-gray-800 to-indigo-900 overflow-hidden">
+      <section className="relative bg-linear-to-br from-slate-950  to-indigo-900 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
@@ -112,7 +112,7 @@ export default function About() {
                       <span className="text-lg">Projekte realisiert</span>
                     </div>
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-2xl font-bold text-gray-900">
+                      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-xl font-bold text-gray-900">
                         100%
                       </div>
                       <span className="text-lg">Leidenschaft</span>
@@ -283,7 +283,7 @@ export default function About() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="relative overflow-hidden bg-linear-to-r from-gray-900 to-indigo-800">
+      <section className="relative overflow-hidden bg-linear-to-r from-slate-950 to-indigo-800">
         {/* Pattern Layer */}
         <div
           className="absolute inset-0 opacity-80"

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function Home({ onNavigate }) {
-  const [isVisible, setIsVisible] = useState({ hero: true }); // Hero sichtbar initialisieren
+  const [isVisible, setIsVisible] = useState({ hero: true });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,8 +44,8 @@ export default function Home({ onNavigate }) {
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/50 z-0"></div>
 
-        {/* Fade to Black Overlay - starts at lower third */}
-        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-linear-to-b from-transparent to-black z-5 pointer-events-none"></div>
+        {/* Fade to Black Overlay */}
+        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-b from-transparent to-black z-5 pointer-events-none"></div>
 
         {/* Content */}
         <div className="relative z-10 max-w-3xl w-full px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-start pt-42 h-full">
@@ -55,7 +55,7 @@ export default function Home({ onNavigate }) {
           >
             <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold leading-tight mb-6">
               <span className="text-white">Maßgeschneiderte </span>
-              <span className="bg-linear-to-r from-[#6D5FFF] to-[#a78bfa] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
                 Online-Lösungen
               </span>
             </h1>
@@ -78,7 +78,7 @@ export default function Home({ onNavigate }) {
           >
             <button
               onClick={() => onNavigate("services")}
-              className="group bg-white text-[#0F0937] px-8 py-3 rounded font-medium hover:shadow-lg hover:shadow-white/30 transition-all duration-300 transform hover:scale-105"
+              className="group bg-white text-gray-900 px-8 py-3 rounded font-medium hover:shadow-lg hover:shadow-white/30 transition-all duration-300 transform hover:scale-105"
             >
               <span className="inline-flex items-center gap-2">
                 Services ansehen
@@ -89,14 +89,14 @@ export default function Home({ onNavigate }) {
             </button>
             <button
               onClick={() => onNavigate("contact")}
-              className="group bg-white text-[#0F0937] px-8 py-3 rounded font-medium hover:shadow-lg hover:shadow-white/30 transition-all duration-300 transform hover:scale-105"
+              className="group bg-white text-gray-900 px-8 py-3 rounded font-medium hover:shadow-lg hover:shadow-white/30 transition-all duration-300 transform hover:scale-105"
             >
               Kontakt aufnehmen
             </button>
           </div>
         </div>
 
-        {/* Scroll Indicator - positioned lower */}
+        {/* Scroll Indicator */}
         <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
           <div className="text-white text-sm mb-2">Scroll</div>
           <svg
@@ -150,7 +150,7 @@ export default function Home({ onNavigate }) {
 
               <button
                 onClick={() => onNavigate("about")}
-                className="group bg-[#0F0937] text-white px-8 py-3 rounded font-medium hover:shadow-lg hover:shadow-[#0F0937]/30 transition-all duration-300 transform hover:scale-105"
+                className="group bg-gray-900 text-white px-8 py-3 rounded font-medium hover:shadow-lg hover:shadow-gray-900/30 transition-all duration-300 transform hover:scale-105"
               >
                 <span className="inline-flex items-center gap-2">
                   Mehr über uns
@@ -172,8 +172,8 @@ export default function Home({ onNavigate }) {
               }`}
             >
               {/* Decorative elements */}
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-linear-to-r from-[#0F0937] to-[#6D5FFF] rounded-lg opacity-10 z-0"></div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-linear-to-r from-[#6D5FFF] to-[#0F0937] rounded-lg opacity-10 z-0"></div>
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-r from-gray-900 to-indigo-600 rounded-lg opacity-10 z-0"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-r from-indigo-600 to-gray-900 rounded-lg opacity-10 z-0"></div>
 
               <div className="relative z-10">
                 {/* Image */}
@@ -185,9 +185,9 @@ export default function Home({ onNavigate }) {
                   />
                 </div>
 
-                {/* Name Badge - Above Image */}
+                {/* Name Badge */}
                 <div className="flex justify-center -translate-y-1/2 relative z-20">
-                  <div className="bg-linear-to-r from-[#0F0937] to-[#6D5FFF] text-white px-8 py-3 rounded-lg font-bold shadow-xl whitespace-nowrap">
+                  <div className="bg-gradient-to-r from-gray-900 to-indigo-600 text-white px-8 py-3 rounded-lg font-bold shadow-xl whitespace-nowrap">
                     Tile Gabloffsky
                   </div>
                 </div>
@@ -198,7 +198,7 @@ export default function Home({ onNavigate }) {
       </section>
 
       {/* DIVIDER */}
-      <div className="bg-linear-to-r from-transparent via-[#0F0937] to-transparent h-px"></div>
+      <div className="bg-gradient-to-r from-transparent via-gray-900 to-transparent h-px"></div>
 
       {/* SERVICES SECTION */}
       <section className="bg-white py-20 sm:py-28">
@@ -215,7 +215,7 @@ export default function Home({ onNavigate }) {
             <h2 className="text-4xl sm:text-5xl font-bold text-black text-center">
               Wie können wir helfen?
             </h2>
-            <div className="h-1 bg-linear-to-r from-[#0F0937] to-[#6D5FFF] mt-2 rounded w-full sm:w-96 md:w-2xl mx-auto"></div>
+            <div className="h-1 bg-gradient-to-r from-gray-900 to-indigo-600 mt-2 rounded w-full sm:w-96 md:w-2xl mx-auto"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
@@ -248,9 +248,9 @@ export default function Home({ onNavigate }) {
                 }`}
                 style={{ transitionDelay: `${idx * 150}ms` }}
               >
-                <div className="p-8 rounded-lg border border-gray-200 hover:border-[#0F0937] hover:shadow-xl hover:shadow-[#0F0937]/10 transition-all duration-300 h-full transform hover:-translate-y-2">
-                  <div className="h-1 w-12 bg-linear-to-r from-[#0F0937] to-[#6D5FFF] mb-6 rounded group-hover:w-full transition-all duration-500"></div>
-                  <h3 className="text-2xl font-bold mb-3 text-black group-hover:text-[#0F0937] transition-colors">
+                <div className="p-8 rounded-lg border border-gray-200 hover:border-gray-900 hover:shadow-xl hover:shadow-gray-900/10 transition-all duration-300 h-full transform hover:-translate-y-2">
+                  <div className="h-1 w-12 bg-gradient-to-r from-gray-900 to-indigo-600 mb-6 rounded group-hover:w-full transition-all duration-500"></div>
+                  <h3 className="text-2xl font-bold mb-3 text-black group-hover:text-gray-900 transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
@@ -264,18 +264,26 @@ export default function Home({ onNavigate }) {
       </section>
 
       {/* CTA SECTION */}
-      <section className="relative overflow-hidden" data-animate id="cta">
+      <section 
+        className="relative overflow-hidden bg-gradient-to-r from-gray-900 to-indigo-800" 
+        data-animate 
+        id="cta"
+      >
+        {/* Pattern Layer - zwischen Hintergrund und Content */}
         <div
-          className={`absolute inset-0 bg-linear-to-r from-[#0F0937] to-[#1a0d52] transition-all duration-1000 ${
-            isVisible.cta ? "opacity-100" : "opacity-90"
-          }`}
+          className="absolute inset-0 opacity-80"
+          style={{
+            backgroundImage: 'url("../src/assets/techpattern.svg")',
+            backgroundRepeat: 'repeat',
+            backgroundSize: 'auto'
+          }}
         ></div>
 
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#6D5FFF] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
           <div
-            className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#0F0937] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
+            className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
             style={{ animationDelay: "2s" }}
           ></div>
         </div>
@@ -295,7 +303,7 @@ export default function Home({ onNavigate }) {
           </p>
           <button
             onClick={() => onNavigate("contact")}
-            className="bg-white text-[#0F0937] px-8 py-3 rounded font-medium hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="bg-white text-gray-900 px-8 py-3 rounded font-medium hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
             Kontakt aufnehmen
           </button>

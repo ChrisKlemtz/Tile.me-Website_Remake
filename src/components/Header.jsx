@@ -1,19 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../assets/tile-logo.svg";
 import namelogo from "../assets/tile-schriftzug.svg";
 
-export default function Header({ onNavigate }) {
-  const [active, setActive] = useState("home");
+export default function Header({ onNavigate, currentPage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrollOpacity, setScrollOpacity] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const maxScroll = 200; // Pixel-Bereich für den Übergang
+
+      // Berechne Opazität: von 1 (oben) zu 0.5 (bei maxScroll)
+      const opacity = Math.max(0.5, 1 - (scrollPosition / maxScroll) * 0.5);
+      setScrollOpacity(opacity);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleClick = (page) => {
-    setActive(page);
     onNavigate(page);
     setMobileMenuOpen(false);
   };
 
   return (
-    <header className="border-b border-gray-100 bg-linear-to-r bg-[#0F0937] to-[#000002] sticky top-0 z-50">
+    <header
+      className="sticky top-0 z-50 transition-all duration-500 ease-out backdrop-blur-md border-b border-gray-100/20"
+      style={{
+        backgroundColor: `rgba(15, 9, 55, ${scrollOpacity})`,
+      }}
+    >
       <nav className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
         {/* Logo + Name SVG */}
         <button
@@ -33,7 +51,7 @@ export default function Header({ onNavigate }) {
           <button
             onClick={() => handleClick("home")}
             className={`text-sm font-medium transition ${
-              active === "home"
+              currentPage === "home"
                 ? "text-red-600 text-xl"
                 : "text-white hover:text-red-600"
             }`}
@@ -43,7 +61,7 @@ export default function Header({ onNavigate }) {
           <button
             onClick={() => handleClick("services")}
             className={`text-sm font-medium transition ${
-              active === "services"
+              currentPage === "services"
                 ? "text-red-600 text-xl"
                 : "text-white hover:text-red-600"
             }`}
@@ -53,7 +71,7 @@ export default function Header({ onNavigate }) {
           <button
             onClick={() => handleClick("about")}
             className={`text-sm font-medium transition ${
-              active === "about"
+              currentPage === "about"
                 ? "text-red-600 text-xl"
                 : "text-white hover:text-red-600"
             }`}
@@ -63,7 +81,7 @@ export default function Header({ onNavigate }) {
           <button
             onClick={() => handleClick("contact")}
             className={`text-sm font-medium transition ${
-              active === "contact"
+              currentPage === "contact"
                 ? "text-red-600 text-xl"
                 : "text-white hover:text-red-600"
             }`}

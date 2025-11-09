@@ -28,7 +28,7 @@ export default function Home({ onNavigate }) {
   return (
     <div className="bg-white">
       {/* HERO SECTION */}
-      <section className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-black">
+      <section className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-black -mt-[88px] pt-[88px]">
         {/* Video Background */}
         <video
           autoPlay
@@ -114,91 +114,6 @@ export default function Home({ onNavigate }) {
           </svg>
         </div>
       </section>
-
-      {/* ABOUT TEASER SECTION */}
-      <section className="bg-white py-20 sm:py-28">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Text Content */}
-            <div
-              data-animate
-              id="about-teaser"
-              className={`transition-all duration-1000 ${
-                isVisible["about-teaser"]
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
-            >
-              <div className="mb-6">
-                <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6">
-                  Wer ist Tile?
-                </h2>
-              </div>
-
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Seit 2008 entwickeln wir Websites und optimieren
-                Online-Präsenzen. Wir sind Entwickler, Marketing-Experten und
-                Berater – mit dem klaren Fokus auf echte Ergebnisse und
-                Lösungen.
-              </p>
-
-              <p className="text-gray-600 leading-relaxed mb-8">
-                Unser Ansatz: Echte Webentwicklung, die versteht wie dein
-                Business funktioniert. Mit Leidenschaft für Details, Effizienz
-                und lösungsorientiertes Arbeiten.
-              </p>
-
-              <button
-                onClick={() => onNavigate("about")}
-                className="group bg-gray-900 text-white px-8 py-3 rounded font-medium hover:shadow-lg hover:shadow-gray-900/30 transition-all duration-300 transform hover:scale-105"
-              >
-                <span className="inline-flex items-center gap-2">
-                  Mehr über uns
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
-                </span>
-              </button>
-            </div>
-
-            {/* Image Container */}
-            <div
-              data-animate
-              id="about-image"
-              className={`relative transition-all duration-1000 delay-300 ${
-                isVisible["about-image"]
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
-            >
-              {/* Decorative elements */}
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-linear-to-r from-gray-900 to-indigo-600 rounded-lg opacity-10 z-0"></div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-linear-to-r from-indigo-600 to-gray-900 rounded-lg opacity-10 z-0"></div>
-
-              <div className="relative z-10">
-                {/* Image */}
-                <div className="rounded-lg overflow-hidden shadow-2xl">
-                  <img
-                    src="../src/assets/tilefoto.jpg"
-                    alt="Tile Gabloffsky"
-                    className="w-full h-auto object-cover rounded-lg transform hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-
-                {/* Name Badge */}
-                <div className="flex justify-center -translate-y-1/2 relative z-20">
-                  <div className="bg-linear-to-r from-gray-900 to-indigo-600 text-white px-8 py-3 rounded-lg font-bold shadow-xl whitespace-nowrap">
-                    Tile Gabloffsky
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* DIVIDER */}
-      <div className="bg-linear-to-r from-transparent via-gray-900 to-transparent h-px"></div>
 
       {/* SERVICES SECTION */}
       <section className="bg-white py-20 sm:py-28">

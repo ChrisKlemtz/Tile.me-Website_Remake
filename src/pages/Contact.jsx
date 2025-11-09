@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 
-export default function Contact() {
+export default function Contact({ onNavigate }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [isVisible, setIsVisible] = useState({});
 
@@ -47,6 +48,7 @@ export default function Contact() {
 
     setTimeout(() => {
       setFormData({ name: "", email: "", phone: "", message: "" });
+      setPrivacyAccepted(false);
       setSubmitted(false);
     }, 3000);
   };
@@ -141,7 +143,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#0F0937] focus:shadow-lg focus:shadow-[#0F0937]/10 transition-all duration-300 bg-white"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#0F0937] focus:shadow-lg focus:shadow-[#0F0937]/10 transition-all duration-300 bg-white placeholder:text-gray-400"
                     placeholder="Max Mustermann"
                   />
                 </div>
@@ -170,7 +172,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#0F0937] focus:shadow-lg focus:shadow-[#0F0937]/10 transition-all duration-300 bg-white"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#0F0937] focus:shadow-lg focus:shadow-[#0F0937]/10 transition-all duration-300 bg-white placeholder:text-gray-400"
                     placeholder="max@example.de"
                   />
                 </div>
@@ -198,7 +200,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#0F0937] focus:shadow-lg focus:shadow-[#0F0937]/10 transition-all duration-300 bg-white"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#0F0937] focus:shadow-lg focus:shadow-[#0F0937]/10 transition-all duration-300 bg-white placeholder:text-gray-400"
                     placeholder="+49 123 456789"
                   />
                 </div>
@@ -227,9 +229,45 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows="6"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#0F0937] focus:shadow-lg focus:shadow-[#0F0937]/10 transition-all duration-300 bg-white resize-none"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#0F0937] focus:shadow-lg focus:shadow-[#0F0937]/10 transition-all duration-300 bg-white resize-none placeholder:text-gray-400"
                     placeholder="Erzähl uns von deinem Projekt oder deinen Fragen..."
                   />
+                </div>
+
+                {/* Privacy Checkbox */}
+                <div
+                  data-animate
+                  id="field-privacy"
+                  className={`transition-all duration-1000 ${
+                    isVisible["field-privacy"]
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-10"
+                  }`}
+                  style={{ transitionDelay: "300ms" }}
+                >
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="privacy"
+                      checked={privacyAccepted}
+                      onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                      className="mt-1 w-4 h-4 border-2 border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-[#0F0937] transition-all cursor-pointer"
+                    />
+                    <label
+                      htmlFor="privacy"
+                      className="text-sm text-gray-700 cursor-pointer"
+                    >
+                      Ich habe die{" "}
+                      <button
+                        type="button"
+                        onClick={() => onNavigate("datenschutz")}
+                        className="text-[#0F0937] hover:text-[#6D5FFF] underline font-semibold transition-colors"
+                      >
+                        Datenschutzerklärung
+                      </button>{" "}
+                      gelesen und akzeptiere diese. *
+                    </label>
+                  </div>
                 </div>
 
                 {/* Submit Button */}
@@ -241,11 +279,16 @@ export default function Contact() {
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-10"
                   }`}
-                  style={{ transitionDelay: "300ms" }}
+                  style={{ transitionDelay: "350ms" }}
                 >
                   <button
                     onClick={handleSubmit}
-                    className="w-full group bg-linear-to-r from-[#0F0937] to-[#1a0d52] text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-[#0F0937]/30 transition-all duration-300 transform hover:scale-105 text-lg"
+                    disabled={!privacyAccepted}
+                    className={`w-full group px-8 py-4 rounded-lg font-semibold transition-all duration-300 text-lg ${
+                      privacyAccepted
+                        ? "bg-linear-to-r from-[#0F0937] to-[#1a0d52] text-white hover:shadow-lg hover:shadow-[#0F0937]/30 transform hover:scale-105 cursor-pointer"
+                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                    }`}
                   >
                     <span className="inline-flex items-center justify-center gap-2">
                       Nachricht senden
@@ -289,13 +332,13 @@ export default function Contact() {
                 icon: "📧",
                 title: "Email",
                 desc: "Lieber schreiben?",
-                content: "mail@tile.de",
+                content: "tile@tile.me",
               },
               {
                 icon: "📱",
                 title: "Telefon",
                 desc: "Direkter Draht?",
-                content: "+49 (0) 123 456789",
+                content: "03831/3554565",
               },
               {
                 icon: "💬",
@@ -321,11 +364,59 @@ export default function Contact() {
                     {item.title}
                   </h3>
                   <p className="text-gray-600 text-sm mb-3">{item.desc}</p>
-                  <p className="text-black font-semibold">{item.content}</p>
+                  {item.title === "Telefon" ? (
+                    <a
+                      href="tel:038313554565"
+                      className="text-black font-semibold hover:text-[#0F0937] transition-colors inline-block"
+                    >
+                      {item.content}
+                    </a>
+                  ) : (
+                    <p className="text-black font-semibold">{item.content}</p>
+                  )}
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="relative overflow-hidden bg-linear-to-r from-gray-900 to-indigo-800">
+        {/* Pattern Layer - zwischen Hintergrund und Content */}
+        <div
+          className="absolute inset-0 opacity-80"
+          style={{
+            backgroundImage: 'url("../src/assets/techpattern.svg")',
+            backgroundRepeat: "repeat",
+            backgroundSize: "auto",
+          }}
+        ></div>
+
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+          <div
+            className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
+            style={{ animationDelay: "2s" }}
+          ></div>
+        </div>
+
+        <div
+          data-animate
+          id="cta"
+          className={`relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center transition-all duration-1000 ${
+            isVisible.cta
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
+          }`}
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
+            Wir freuen uns auf dich
+          </h2>
+          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+            Fragen kostet nichts und bleibt unverbindlich. Lass uns sprechen.
+          </p>
         </div>
       </section>
 
@@ -359,9 +450,18 @@ export default function Contact() {
           animation: bounce 2s infinite;
         }
 
+        .animate-pulse {
+          animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
         @keyframes bounce {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+          0%, 100% { opacity: 0.2; }
+          50% { opacity: 0.3; }
         }
       `}</style>
     </div>

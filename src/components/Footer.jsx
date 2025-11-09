@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Footer() {
+export default function Footer({ onNavigate }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -73,39 +73,39 @@ export default function Footer() {
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            <a
-              href="#"
+            <button
+              onClick={() => onNavigate("impressum")}
               className="text-sm text-gray-300 hover:text-white transition-colors duration-300 group"
             >
               <span className="relative">
                 Impressum
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-[#6D5FFF] to-[#a78bfa] group-hover:w-full transition-all duration-300"></span>
               </span>
-            </a>
+            </button>
 
             <div className="hidden sm:block w-px h-4 bg-gray-600/30"></div>
 
-            <a
-              href="#"
+            <button
+              onClick={() => onNavigate("datenschutz")}
               className="text-sm text-gray-300 hover:text-white transition-colors duration-300 group"
             >
               <span className="relative">
                 Datenschutz
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-[#6D5FFF] to-[#a78bfa] group-hover:w-full transition-all duration-300"></span>
               </span>
-            </a>
+            </button>
 
             <div className="hidden sm:block w-px h-4 bg-gray-600/30"></div>
 
-            <a
-              href="#"
+            <button
+              onClick={() => onNavigate("contact")}
               className="text-sm text-gray-300 hover:text-white transition-colors duration-300 group"
             >
               <span className="relative">
                 Kontakt
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-[#6D5FFF] to-[#a78bfa] group-hover:w-full transition-all duration-300"></span>
               </span>
-            </a>
+            </button>
           </div>
         </div>
 

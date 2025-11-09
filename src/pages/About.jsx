@@ -198,6 +198,79 @@ export default function About() {
       {/* DIVIDER */}
       <div className="bg-linear-to-r from-transparent via-gray-900 to-transparent h-px"></div>
 
+      {/* DAS IST TILE SECTION */}
+      <section className="bg-white py-20 sm:py-28">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Text Content */}
+            <div
+              data-animate
+              id="tile-intro"
+              className={`transition-all duration-1000 ${
+                isVisible["tile-intro"]
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
+              <div className="mb-6">
+                <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6">
+                  Das ist Tile
+                </h2>
+              </div>
+
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                Seit 2008 entwickeln wir Websites und optimieren
+                Online-Präsenzen. Wir sind Entwickler, Marketing-Experten und
+                Berater – mit dem klaren Fokus auf echte Ergebnisse und
+                Lösungen.
+              </p>
+
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Unser Ansatz: Echte Webentwicklung, die versteht wie dein
+                Business funktioniert. Mit Leidenschaft für Details, Effizienz
+                und lösungsorientiertes Arbeiten.
+              </p>
+            </div>
+
+            {/* Image Container */}
+            <div
+              data-animate
+              id="tile-image"
+              className={`relative transition-all duration-1000 delay-300 ${
+                isVisible["tile-image"]
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -left-4 w-24 h-24 bg-linear-to-r from-gray-900 to-indigo-600 rounded-lg opacity-10 z-0"></div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-linear-to-r from-indigo-600 to-gray-900 rounded-lg opacity-10 z-0"></div>
+
+              <div className="relative z-10 max-w-md mx-auto">
+                {/* Image */}
+                <div className="rounded-lg overflow-hidden shadow-2xl">
+                  <img
+                    src="../src/assets/tilefoto.jpg"
+                    alt="Tile Gabloffsky"
+                    className="w-full h-auto object-cover rounded-lg transform hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                {/* Name Badge */}
+                <div className="flex justify-center -translate-y-1/2 relative z-20">
+                  <div className="bg-linear-to-r from-gray-900 to-indigo-600 text-white px-8 py-3 rounded-lg font-bold shadow-xl whitespace-nowrap">
+                    Tile Gabloffsky
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DIVIDER */}
+      <div className="bg-linear-to-r from-transparent via-gray-900 to-transparent h-px"></div>
+
       {/* TEAM & NETWORK SECTION */}
       <section className="bg-white py-20 sm:py-28">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -283,18 +356,18 @@ export default function About() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="relative overflow-hidden bg-linear-to-r from-slate-950 to-indigo-800">
-        {/* Pattern Layer */}
+      <section className="relative overflow-hidden bg-linear-to-r from-gray-900 to-indigo-800">
+        {/* Pattern Layer - zwischen Hintergrund und Content */}
         <div
           className="absolute inset-0 opacity-80"
           style={{
-            backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+            backgroundImage: 'url("../src/assets/techpattern.svg")',
             backgroundRepeat: 'repeat',
             backgroundSize: 'auto'
           }}
         ></div>
 
-        {/* Animated background */}
+        {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
           <div

@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Impressum from "./pages/Impressum";
+import Privacy from "./pages/Privacy";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
@@ -16,16 +18,18 @@ export default function App() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <Header onNavigate={navigateTo} />
+      <Header onNavigate={navigateTo} currentPage={currentPage} />
 
       <main className="flex-grow">
         {currentPage === "home" && <Home onNavigate={navigateTo} />}
         {currentPage === "services" && <Services />}
         {currentPage === "about" && <About />}
-        {currentPage === "contact" && <Contact />}
+        {currentPage === "contact" && <Contact onNavigate={navigateTo} />}
+        {currentPage === "impressum" && <Impressum />}
+        {currentPage === "datenschutz" && <Privacy />}
       </main>
 
-      <Footer />
+      <Footer onNavigate={navigateTo} />
     </div>
   );
 }

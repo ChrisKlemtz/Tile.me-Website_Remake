@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import tileFoto from "../assets/tilefoto.jpg";
+import techPattern from "../assets/techpattern.svg";
 
 export default function About() {
   const [isVisible, setIsVisible] = useState({});
@@ -250,7 +252,7 @@ export default function About() {
                 {/* Image */}
                 <div className="rounded-lg overflow-hidden shadow-2xl">
                   <img
-                    src="../src/assets/tilefoto.jpg"
+                    src={tileFoto}
                     alt="Tile Gabloffsky"
                     className="w-full h-auto object-cover rounded-lg transform hover:scale-105 transition-transform duration-500"
                   />
@@ -361,7 +363,7 @@ export default function About() {
         <div
           className="absolute inset-0 opacity-80"
           style={{
-            backgroundImage: 'url("../src/assets/techpattern.svg")',
+            backgroundImage: `url(${techPattern})`,
             backgroundRepeat: 'repeat',
             backgroundSize: 'auto'
           }}

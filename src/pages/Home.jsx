@@ -7,6 +7,8 @@ import donutIcon from "../assets/icons/donut-bitten-svgrepo-com.svg";
 import cpuBoltIcon from "../assets/icons/cpu-bolt-svgrepo-com.svg";
 import shieldNetworkIcon from "../assets/icons/shield-network-svgrepo-com.svg";
 import accessibilityIcon from "../assets/icons/accessibility-svgrepo-com.svg";
+import heroVideo from "../assets/hero-video.mp4";
+import techPattern from "../assets/techpattern.svg";
 
 export default function Home({ onNavigate }) {
   const [isVisible, setIsVisible] = useState({ hero: true });
@@ -165,7 +167,7 @@ export default function Home({ onNavigate }) {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="../src/assets/hero-video.mp4" type="video/mp4" />
+          <source src={heroVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -503,7 +505,7 @@ export default function Home({ onNavigate }) {
         <div
           className="absolute inset-0 opacity-80"
           style={{
-            backgroundImage: 'url("../src/assets/techpattern.svg")',
+            backgroundImage: `url(${techPattern})`,
             backgroundRepeat: 'repeat',
             backgroundSize: 'auto'
           }}

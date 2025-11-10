@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import techPattern from "../assets/techpattern.svg";
 
 export default function Services() {
   const [isVisible, setIsVisible] = useState({});
@@ -405,7 +406,7 @@ export default function Services() {
         <div
           className="absolute inset-0 opacity-80"
           style={{
-            backgroundImage: 'url("../src/assets/techpattern.svg")',
+            backgroundImage: `url(${techPattern})`,
             backgroundRepeat: 'repeat',
             backgroundSize: 'auto'
           }}

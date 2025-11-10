@@ -12,6 +12,17 @@ export default function Contact({ onNavigate }) {
   const [isVisible, setIsVisible] = useState({});
 
   useEffect(() => {
+    // Check for prefilled message from sessionStorage
+    const prefilledMessage = sessionStorage.getItem("contactMessage");
+    if (prefilledMessage) {
+      setFormData((prev) => ({
+        ...prev,
+        message: prefilledMessage,
+      }));
+      // Clear the sessionStorage after using it
+      sessionStorage.removeItem("contactMessage");
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -333,18 +344,21 @@ export default function Contact({ onNavigate }) {
                 title: "Email",
                 desc: "Lieber schreiben?",
                 content: "tile@tile.me",
+                href: "mailto:tile@tile.me",
               },
               {
                 icon: "📱",
                 title: "Telefon",
                 desc: "Direkter Draht?",
                 content: "03831/3554565",
+                href: "tel:038313554565",
               },
               {
                 icon: "💬",
                 title: "Chat",
                 desc: "Schnelle Frage?",
-                content: "Schreib uns auf WhatsApp",
+                content: "+49 151 62645258",
+                href: "https://wa.me/4915162645258",
               },
             ].map((item, idx) => (
               <div
@@ -364,16 +378,14 @@ export default function Contact({ onNavigate }) {
                     {item.title}
                   </h3>
                   <p className="text-gray-600 text-sm mb-3">{item.desc}</p>
-                  {item.title === "Telefon" ? (
-                    <a
-                      href="tel:038313554565"
-                      className="text-black font-semibold hover:text-[#0F0937] transition-colors inline-block"
-                    >
-                      {item.content}
-                    </a>
-                  ) : (
-                    <p className="text-black font-semibold">{item.content}</p>
-                  )}
+                  <a
+                    href={item.href}
+                    target={item.title === "Chat" ? "_blank" : undefined}
+                    rel={item.title === "Chat" ? "noopener noreferrer" : undefined}
+                    className="text-black font-semibold hover:text-[#0F0937] transition-colors inline-block"
+                  >
+                    {item.content}
+                  </a>
                 </div>
               </div>
             ))}

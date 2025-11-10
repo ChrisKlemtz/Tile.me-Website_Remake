@@ -208,7 +208,7 @@ export default function Home({ onNavigate }) {
           >
             <button
               onClick={() => onNavigate("services")}
-              className="group bg-white text-gray-900 px-8 py-3 rounded font-medium hover:shadow-lg hover:shadow-white/30 transition-all duration-300 transform hover:scale-105"
+              className="group bg-white text-gray-900 px-6 py-2.5 sm:px-8 sm:py-3 rounded text-sm sm:text-base font-medium hover:shadow-lg hover:shadow-white/30 transition-all duration-300 transform hover:scale-105"
             >
               <span className="inline-flex items-center gap-2">
                 Services ansehen
@@ -219,7 +219,7 @@ export default function Home({ onNavigate }) {
             </button>
             <button
               onClick={() => onNavigate("contact")}
-              className="group bg-white text-gray-900 px-8 py-3 rounded font-medium hover:shadow-lg hover:shadow-white/30 transition-all duration-300 transform hover:scale-105"
+              className="group bg-white text-gray-900 px-6 py-2.5 sm:px-8 sm:py-3 rounded text-sm sm:text-base font-medium hover:shadow-lg hover:shadow-white/30 transition-all duration-300 transform hover:scale-105"
             >
               Kontakt aufnehmen
             </button>

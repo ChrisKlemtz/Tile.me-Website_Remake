@@ -178,7 +178,7 @@ export default function Home({ onNavigate }) {
         <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-linear-to-b from-transparent to-black z-5 pointer-events-none"></div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-3xl w-full px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center sm:justify-start h-full pb-32 sm:pb-0">
+        <div className="relative z-10 max-w-3xl w-full px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center h-full pb-32 sm:pb-40">
           <div
             className="animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
@@ -503,11 +503,11 @@ export default function Home({ onNavigate }) {
       >
         {/* Pattern Layer - zwischen Hintergrund und Content */}
         <div
-          className="absolute inset-0 opacity-80"
+          className="absolute inset-0 opacity-60 md:opacity-80"
           style={{
             backgroundImage: `url(${techPattern})`,
             backgroundRepeat: 'repeat',
-            backgroundSize: 'auto'
+            backgroundSize: '200px 200px'
           }}
         ></div>
 

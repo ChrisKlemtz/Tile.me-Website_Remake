@@ -404,11 +404,11 @@ export default function Services() {
       <section className="relative bg-linear-to-r from-gray-900 to-indigo-800 overflow-hidden">
         {/* Pattern Layer - zwischen Hintergrund und Content */}
         <div
-          className="absolute inset-0 opacity-80"
+          className="absolute inset-0 opacity-60 md:opacity-80"
           style={{
             backgroundImage: `url(${techPattern})`,
             backgroundRepeat: 'repeat',
-            backgroundSize: 'auto'
+            backgroundSize: '200px 200px'
           }}
         ></div>
 

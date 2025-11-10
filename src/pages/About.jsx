@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import tileFoto from "../assets/tilefoto.jpg";
 import techPattern from "../assets/techpattern.svg";
 
-export default function About() {
+export default function About({ onNavigate }) {
   const [isVisible, setIsVisible] = useState({});
 
   useEffect(() => {
@@ -395,7 +395,7 @@ export default function About() {
           <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
             Du hast ein Projekt im Kopf? Wir hören zu, beraten ehrlich und finden gemeinsam die beste Lösung.
           </p>
-          <button className="bg-white text-gray-900 px-8 py-3 rounded font-medium hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <button onClick={() => onNavigate("contact")} className="bg-white text-gray-900 px-8 py-3 rounded font-medium hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
             Kontakt aufnehmen
           </button>
         </div>

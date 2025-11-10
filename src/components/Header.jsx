@@ -174,6 +174,31 @@ export default function Header({ onNavigate, currentPage }) {
             >
               Kontakt
             </button>
+
+            {/* Divider */}
+            <div className="border-t border-gray-700 my-4"></div>
+
+            {/* Legal Links */}
+            <button
+              onClick={() => handleClick("impressum")}
+              className={`block w-full text-left px-6 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
+                currentPage === "impressum"
+                  ? "bg-white text-gray-900 shadow-lg"
+                  : "text-gray-300 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              Impressum
+            </button>
+            <button
+              onClick={() => handleClick("privacy")}
+              className={`block w-full text-left px-6 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
+                currentPage === "privacy"
+                  ? "bg-white text-gray-900 shadow-lg"
+                  : "text-gray-300 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              Datenschutzerklärung
+            </button>
           </div>
         </div>
       )}

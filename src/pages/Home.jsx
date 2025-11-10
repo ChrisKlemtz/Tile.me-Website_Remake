@@ -15,6 +15,7 @@ export default function Home({ onNavigate }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
   const carouselRef = useRef(null);
 
   const inquiryCards = [
@@ -132,6 +133,20 @@ export default function Home({ onNavigate }) {
 
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  // Back to top button visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -584,6 +599,29 @@ export default function Home({ onNavigate }) {
           50% { transform: translateY(-10px); }
         }
       `}</style>
+
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-6 right-6 bg-gray-900/80 hover:bg-gray-900 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50 backdrop-blur-sm ${
+          showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+        }`}
+        aria-label="Zurück nach oben"
+      >
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          />
+        </svg>
+      </button>
     </div>
   );
 }

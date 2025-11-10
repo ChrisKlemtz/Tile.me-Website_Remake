@@ -132,29 +132,45 @@ export default function Header({ onNavigate, currentPage }) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="sm:hidden border-t border-gray-100 bg-white">
-          <div className="px-4 py-4 space-y-3">
+        <div className="sm:hidden absolute top-[88px] left-0 right-0 bg-gradient-to-b from-gray-900 to-gray-800 shadow-2xl z-50">
+          <div className="px-6 py-8 space-y-2">
             <button
               onClick={() => handleClick("home")}
-              className="block w-full text-left text-sm font-medium text-gray-700 hover:text-black"
+              className={`block w-full text-left px-6 py-4 rounded-lg text-lg font-semibold transition-all duration-300 ${
+                currentPage === "home"
+                  ? "bg-white text-gray-900 shadow-lg"
+                  : "text-gray-100 hover:bg-white/10 hover:text-white"
+              }`}
             >
               Home
             </button>
             <button
               onClick={() => handleClick("services")}
-              className="block w-full text-left text-sm font-medium text-gray-700 hover:text-black"
+              className={`block w-full text-left px-6 py-4 rounded-lg text-lg font-semibold transition-all duration-300 ${
+                currentPage === "services"
+                  ? "bg-white text-gray-900 shadow-lg"
+                  : "text-gray-100 hover:bg-white/10 hover:text-white"
+              }`}
             >
               Services
             </button>
             <button
               onClick={() => handleClick("about")}
-              className="block w-full text-left text-sm font-medium text-gray-700 hover:text-black"
+              className={`block w-full text-left px-6 py-4 rounded-lg text-lg font-semibold transition-all duration-300 ${
+                currentPage === "about"
+                  ? "bg-white text-gray-900 shadow-lg"
+                  : "text-gray-100 hover:bg-white/10 hover:text-white"
+              }`}
             >
               About
             </button>
             <button
               onClick={() => handleClick("contact")}
-              className="block w-full text-left text-sm font-medium text-gray-700 hover:text-black"
+              className={`block w-full text-left px-6 py-4 rounded-lg text-lg font-semibold transition-all duration-300 ${
+                currentPage === "contact"
+                  ? "bg-white text-gray-900 shadow-lg"
+                  : "text-gray-100 hover:bg-white/10 hover:text-white"
+              }`}
             >
               Kontakt
             </button>

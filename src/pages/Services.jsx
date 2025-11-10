@@ -404,16 +404,18 @@ export default function Services() {
       <section className="relative bg-linear-to-r from-gray-900 to-indigo-800 overflow-hidden">
         {/* Pattern Layer - zwischen Hintergrund und Content */}
         <div
-          className="absolute inset-0 opacity-60 md:opacity-80"
+          className="absolute inset-0 z-10"
           style={{
-            backgroundImage: `url(${techPattern})`,
+            backgroundImage: `url("${techPattern}")`,
             backgroundRepeat: 'repeat',
-            backgroundSize: '200px 200px'
+            backgroundSize: '150px 150px',
+            opacity: 0.3,
+            mixBlendMode: 'screen'
           }}
         ></div>
 
         {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden z-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
           <div
             className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
@@ -424,7 +426,7 @@ export default function Services() {
         <div
           data-animate
           id="cta"
-          className={`relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center transition-all duration-1000 ${
+          className={`relative z-20 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center transition-all duration-1000 ${
             isVisible.cta
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-10"

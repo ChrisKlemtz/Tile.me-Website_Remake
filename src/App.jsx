@@ -22,11 +22,11 @@ export default function App() {
 
       <main className="flex-grow">
         {currentPage === "home" && <Home onNavigate={navigateTo} />}
-        {currentPage === "services" && <Services />}
-        {currentPage === "about" && <About />}
+        {currentPage === "services" && <Services onNavigate={navigateTo} />}
+        {currentPage === "about" && <About onNavigate={navigateTo} />}
         {currentPage === "contact" && <Contact onNavigate={navigateTo} />}
         {currentPage === "impressum" && <Impressum />}
-        {currentPage === "datenschutz" && <Privacy />}
+        {currentPage === "privacy" && <Privacy />}
       </main>
 
       <Footer onNavigate={navigateTo} />

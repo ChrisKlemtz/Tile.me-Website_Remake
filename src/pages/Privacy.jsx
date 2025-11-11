@@ -58,7 +58,7 @@ export default function Privacy() {
             className="animate-fade-in-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-white">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 text-white">
               Datenschutzerklärung
             </h1>
             <div className="h-1 bg-linear-to-r from-white to-indigo-400 rounded w-32 mb-8"></div>
